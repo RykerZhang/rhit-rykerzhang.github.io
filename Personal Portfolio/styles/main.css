@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Roboto&display=swap');
+
+:root{
+    --vertical-space:2rem;
+    --horizontal-space:3rem;
+
+    --light-color:#F2E18D;
+    --body-color:#BFB99B;
+    --heading-color:#F29544;
+    --contrast-color:#E04B31;
+}
+
+body{
+    /* padding-left:4em; */
+    font-size:18px;
+    line-height:1.8;
+    font-family: 'Roboto', sans-serif;
+    background-image: radial-gradient(circle at 13% 47%, rgba(140, 140, 140,0.03) 0%, rgba(140, 140, 140,0.03) 25%,transparent 25%, transparent 100%),radial-gradient(circle at 28% 63%, rgba(143, 143, 143,0.03) 0%, rgba(143, 143, 143,0.03) 16%,transparent 16%, transparent 100%),radial-gradient(circle at 81% 56%, rgba(65, 65, 65,0.03) 0%, rgba(65, 65, 65,0.03) 12%,transparent 12%, transparent 100%),radial-gradient(circle at 26% 48%, rgba(60, 60, 60,0.03) 0%, rgba(60, 60, 60,0.03) 6%,transparent 6%, transparent 100%),radial-gradient(circle at 97% 17%, rgba(150, 150, 150,0.03) 0%, rgba(150, 150, 150,0.03) 56%,transparent 56%, transparent 100%),radial-gradient(circle at 50% 100%, rgba(25, 25, 25,0.03) 0%, rgba(25, 25, 25,0.03) 36%,transparent 36%, transparent 100%),radial-gradient(circle at 55% 52%, rgba(69, 69, 69,0.03) 0%, rgba(69, 69, 69,0.03) 6%,transparent 6%, transparent 100%),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));
+    color:var(--body-color);
+}
+
+body#about img{
+    height:15em;
+}
+
+
+p{
+    max-width:50em;
+}
+
+h1, h2, h3{
+    line-height:1.2;
+    font-family: 'Parisienne', cursive;
+    color:var(--heading-color);
+}
+
+a{
+    color:var(--body-color);
+    text-decoration-color:var(--contrast-color);
+}
+
+a:hover{
+    color:var(--contrast-color);
+}
+
+
+body {
+    display:grid;
+    grid-template-areas:"head head"
+                        "navs navs"
+                        "main main"
+                        "foot foot"; 
+    grid-template-columns:1fr 4fr;
+    grid-template-rows:auto 1fr auto;
+}
+
+@media screen and (min-width:25em){
+    body{
+        grid-template-areas:"head head"
+                            "navs main"
+                            "foot foot";
+        grid-template-rows:auto 1fr auto;
+
+    }
+}
+
+body>*{
+    padding-left:var(--horizontal-space);
+    padding-right:var(--horizontal-space);
+
+}
+
+body>header{
+    grid-area:head;
+    /* background-color:yellow; */
+}
+
+body>nav{
+    grid-area:navs;
+    /* background-color:blue; */
+}
+
+body>nav ul{
+    list-style-type: none;
+    padding:0
+}
+
+body>nav ul li{
+    display:block;
+    padding-right: 1rem;
+}
+
+body>main{
+    grid-area:main;
+    /* background-color:purple; */
+}
+
+body>footer{
+    grid-area:foot;
+    /* background-color:red; */
+}
+
+header,footer{
+    padding-top: var(--vertical-space) ;
+    padding-bottom: var(--vertical-space) ;
+
+}
+
+header h1, footer h1{
+    margin:0;
+}
+
+body#portfolio ul#portfolioItems{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+}
+
+body#portfolio ul#portfolioItems li{
+    flex-basis: 48%;
+    padding-right: 2%;
+}
+
+body#portfolio ul#portfolioItems li img{
+    max-width:100%;
+}
